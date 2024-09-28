@@ -8,6 +8,7 @@ import cheeseImage from './assets/cheese.png'
 import lettuceImage from './assets/lettuce.png'
 import baconImage from './assets/bacon.png'
 import IngredientButton from "./Button.tsx";
+import Burger from "./Burger.tsx";
 
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
                 )
             })}
         </div>
+            <Burger ingredients={ingredients}/>
         </div>
     )
     }
