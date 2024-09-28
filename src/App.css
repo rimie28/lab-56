@@ -172,6 +172,10 @@
 .buttonDiv {
   display: flex;
   align-items: center;
+  width: 100%;
+  background: white;
+  padding: 5px;
+  border-radius: 15px;
 }
 
 .buttonsDiv {
@@ -186,5 +190,13 @@
 }
 
 .deleteBtn {
-  margin: auto;
+  margin-left: auto;
+}
+
+.addBtn {
+  background: white;
+  color: black;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
