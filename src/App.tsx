@@ -20,7 +20,6 @@ const App = () => {
         {name: 'Bacon', price: 60, image: baconImage}
     ]
 
-
     const [ingredients, setIngredients] = useState<ingredientsType[]>([
             {name: 'Meat', count: 0},
             {name: 'Cheese', count: 0},
@@ -41,12 +40,25 @@ const App = () => {
         setIngredients(newCount)
     };
 
+
+    const deleteIngredient = (name: string) => {
+        const newCount = ingredients.reduce((acc:ingredientsType[], ingredient) => {
+            if (ingredient.name === name && ingredient.count > 0) {
+                acc.push({...ingredient, count: ingredient.count - 1})
+            } else {
+                acc.push(ingredient)
+            }
+            return acc;
+        }, []);
+        setIngredients(newCount)
+    }
+
     return (
         <div className="container">
         <div className="buttonsDiv">
             {INGREDIENTS.map((ingredient) => {
                 return (
-                    <IngredientButton addIngredient={addIngredient} ingredient={ingredient} key={ingredient.name}
+                    <IngredientButton deleteIngredient={deleteIngredient} addIngredient={addIngredient} ingredient={ingredient} key={ingredient.name}
                     />
                 )
             })}
